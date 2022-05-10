@@ -1,0 +1,111 @@
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "site/navbar.html" %}
+<main>
+
+    <section class="section_1">
+        <div class="home_media">
+
+            <div class="home_photo">
+                <img src="{% static 'images/home-photo.jpg' %}" alt="Anaïs MEIRONE">
+            </div>
+            <p>Anaïs MEIRONE</p>
+
+            <div class="home_social">
+                <a href="https://github.com/anna8321"><i class="fa-brands fa-github-square home_github"></i></a>
+                <a href="https://www.linkedin.com/in/anais-meirone/"><i class="fa-brands fa-linkedin home_linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="home_content">
+            <h2>Développeuse web en 4ème année, Epitech (MscPro 1)</h2>
+            <p>Reconvertie dans le développement web, je suis à la recherche de l’alternance qui m’aidera à monter en compétence et à finaliser mon projet professionnel. En quête d’apprentissage continu, mes expériences antérieures m’ont permis de forger une réelle capacité d’adaptation qui s’avère être un atout non négligeable dans ce secteur en pleine expansion.
+                <br>La réalisation de ce portfolio en est ainsi le reflet de cette transition numérique et de sa diversité.
+            </p>
+
+            <div class="section_1_buttons">
+                <a class="section_1_button_1" href="{% url 'profile:profile'%}" target="_blank">En savoir plus</a>
+                <a class="section_1_button_2" href="#form">Me contacter</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section_2">
+        <h2>Projets récents</h2>
+
+
+            <div class="home_cards">
+
+                 <div class="home_card_1 carousel">
+                     <div class="home_card_image slides">
+                         <div class="slide margin_left_one ">
+                             <img class="one" src="{% static 'images/subflock_ElwrSsa.png' %}" alt="Subflock">
+                             <a href="#"><i class="fa-solid fa-eye home_eye"></i></a>
+                         </div>
+                         <div class="slide">
+                             <img class="two" src="{% static 'images/moonflower.jpg' %}" alt="Moonflowers">
+                             <a href="#"><i class="fa-solid fa-eye home_eye"></i></a>
+                         </div>
+                         <div class="slide">
+                             <img class="three" src="{% static 'images/disney.png' %}" alt="Disney">
+                             <a href="#"><i class="fa-solid fa-eye home_eye"></i></a>
+                         </div>
+                          <div class="slide margin_left_two">
+                            <img class="four" src="{% static 'images/beyondsky.jpg' %}" alt="BeyondSky">
+                              <a href="#"><i class="fa-solid fa-eye home_eye"></i></a>
+                          </div>
+                         <div class="slide">
+                             <img class="five" src="{% static 'images/clean_Xawga2o.png' %}" alt="CleanMyCalanques">
+                             <a href="#"><i class="fa-solid fa-eye home_eye"></i></a>
+                         </div>
+                         <div class="slide margin_right">
+                            <img class="six" src="{% static 'images/book.png' %}" alt="Booki">
+                             <a href="#"><i class="fa-solid fa-eye home_eye"></i></a>
+                         </div>
+                     </div>
+
+                     <div class="controls">
+                         <div class="control prev-slide"><i class="fa-solid fa-circle-arrow-left arrow_left"></i></div>
+                         <div class="control next-slide"><i class="fa-solid fa-circle-right arrow_right"></i></div>
+                     </div>
+                 </div>
+
+
+            </div>
+
+
+
+
+    </section>
+
+    <section class="section_3">
+        <form id="form" action="" method="post">
+            <h2>Me contacter </h2>
+    {% csrf_token %}
+    {{contact_form.as_p}}
+    <label for="lastname">Nom:</label>
+    <input type="text" id="lastname" name="lastname">
+    <label for="firstname">Prénom:</label>
+    <input type="text" id="firstname" name="firstname">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <label for="phone">Téléphone:</label>
+    <input type="text" id="phone" name="phone">
+    <label for="company">Entreprise:</label>
+    <input type="text" id="company" name="company">
+    <div class="form_message">
+        <label class="label_message" for="content">Message:</label>
+        <textarea class="input_message" id="content" name="content" rows="4" cols="50"></textarea>
+    </div>
+        <input  type="submit" value="Envoyer"/>
+
+</form>
+    </section>
+</main>
+    {% include "site/footer.html" %}
+
+
+ {% endblock content %}

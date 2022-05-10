@@ -1,0 +1,18 @@
+{% block content %}
+{% load static %}
+
+<header>
+    <div class="logos">
+        <img src="{% static 'images/zyro-logo.png' %}" alt="logo portfolio">
+    </div>
+    <nav>
+       <ul>
+           <li><a href="{% url 'blog:blog-homepage'%}">Accueil</a></li>
+           <li><a href="{% url 'project:project-index'%}">Projets</a></li>
+           <li> <a href="{% url 'profile:profile'%}">A propos</a></li>
+            <li><a href="#form">Contact</a></li>
+       </ul>
+    </nav>
+</header>
+
+{% endblock content %}

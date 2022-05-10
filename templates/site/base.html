@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Portfolio</title>
+      {% block extra_head %}
+      {% endblock %}
+        {% include "site/css.html" %}
+    </head>
+
+    <body>
+
+
+        <div class="row">
+            <div class="col-12 d-flex flex-column">
+                <div class="body_container">
+            {% block content %}
+            {% endblock content %}
+                </div>
+            </div>
+        </div>
+
+
+        {% include "site/javascript.html" %}
+
+        {% block extra_scripts %}
+        {% endblock extra_scripts %}
+
+
+    </body>
+
+    <script>
+        const delay = 3000;
+
+        const slides = document.querySelector(".slides");
+        const slidesCount = slides.childElementCount;
+        const maxLeft = (slidesCount - 5) * 100 * -1;
+
+        let current = 0;
+
+        function changeSlide(next = true) {
+            if (next) {
+                current += current > maxLeft ? -100 : current * -1;
+            } else {
+                current = current < 0 ? current + 100 : maxLeft;
+            }
+            slides.style.left = current + "%";
+        }
+
+        document.querySelector(".next-slide").addEventListener("click", function() {
+            changeSlide();
+        });
+
+        document.querySelector(".prev-slide").addEventListener("click", function() {
+            changeSlide(false);
+        });
+
+    </script>
+
+
+
+
+</html>

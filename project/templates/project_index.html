@@ -1,0 +1,27 @@
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "site/navbar.html" %}
+<main>
+    <section class="project_index">
+        <div class="project_index_cards">
+            {% for each in object_list %}
+                <div class="project_index_card">
+                    <a href="{% url 'project:project-show' slug=each.slug %}">
+                        <div class="project_index_card_content">
+                            <h2>{{each.title}}</h2>
+                            <p>{{each.short_description}}</p>
+                            <span><em>{{each.technology}}</em></span>
+                        </div>
+                        <div class="project_index_card_image">
+                            <img src="{% if each.image %}{{ each.image.url }}{% endif %}" alt="image {{ each.title}}">
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+    {% include "site/footer.html" %}
+{% endblock content %}

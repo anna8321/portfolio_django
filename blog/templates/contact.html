@@ -1,0 +1,25 @@
+{% load static %}
+
+{% block content %}
+
+<form id="form" action="" method="post">
+    {% csrf_token %}
+    {{contact_form.as_p}}
+    <label for="lastname">Nom:</label>
+    <input type="text" id="lastname" name="lastname">
+    <label for="firstname">Prénom:</label>
+    <input type="text" id="firstname" name="firstname">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <label for="phone">Téléphone:</label>
+    <input type="text" id="phone" name="phone">
+    <label for="company">Entreprise:</label>
+    <input type="text" id="company" name="company">
+    <div class="form_message">
+        <label class="label_message" for="content">Message:</label>
+        <textarea class="input_message" id="content" name="content" rows="4" cols="50"></textarea>
+    </div>
+        <input  type="submit" value="Envoyer"/>
+
+</form>
+{% endblock content %}

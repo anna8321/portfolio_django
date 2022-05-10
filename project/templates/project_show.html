@@ -1,0 +1,12 @@
+{% extends "site/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1>Show project: {{ object.title }}</h1>
+
+  <div style="height: 840px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <span style=" opacity:.6;" class="badge badge-warning"><i class="fa fa-eye" aria-hidden="true"></i> {{ each.visit_counter }}</span>
+  </div>
+
+{% endblock content %}

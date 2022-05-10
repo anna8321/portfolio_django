@@ -1,0 +1,55 @@
+{% extends "site/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% include "site/navbar.html" %}
+<main class="about_main">
+    {% include "site/sidebar.html" %}
+     <section class="about_1">
+         <aside class="about_aside_1">
+              <h3>Technologies</h3>
+             <ul>
+                 <li>Ruby</li>
+                 <li>SQL</li>
+                 <li>Javascript</li>
+             </ul>
+         </aside>
+         <article class="about_article">
+            <h2>Développeuse web</h2>
+        </article>
+         <aside class="about_aside_2">
+             <h3>Soft skills</h3>
+             <ul>
+                 <li>Adaptabilité</li>
+                 <li>Auto-didacte</li>
+                 <li>Communication</li>
+             </ul>
+         </aside>
+     </section>
+    <section class="about_2">
+        <div class="border_white">
+            <div class="black_screen">
+                <h2>Autres compétences techniques</h2>
+                <div class="technology_list">
+                    <ul>
+                        <li>Php</li>
+                        <li>ReactJS</li>
+                        <li>Ruby On Rails</li>
+                    </ul>
+                    <ul>
+                         <li>Dart/flutter</li>
+                        <li>Html/Css</li>
+                        <li>POO/MVC</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="about_3">Formations</section>
+     <section class="about_4">Aspirations futures</section>
+     <section class="about_5">Expériences antérieures</section>
+
+ </main>
+    {% include "site/footer.html" %}
+{% endblock content %}
